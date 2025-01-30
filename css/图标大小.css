@@ -1,0 +1,15 @@
+svg.icon {
+    width: 1.30em;
+    height: 1.30em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+/*社交图标*/
+svg.social_icon {
+    width: 1.28em;
+    height: 1.28em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
