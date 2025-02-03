@@ -55,10 +55,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/%E4%B8%AA%E4%BA%BA%E5%8D%A1%E7%89%87%E6%B8%90%E5%8F%98%E8%89%B2.css"/>
-      <url>/css/%E4%B8%AA%E4%BA%BA%E5%8D%A1%E7%89%87%E6%B8%90%E5%8F%98%E8%89%B2.css</url>
+      <link href="/css/snow.css"/>
+      <url>/css/snow.css</url>
       
-        <content type="html"><![CDATA[/* 侧边栏个人信息卡片动态渐变色 */#aside-content > .card-widget.card-info {    background: linear-gradient(      -45deg,      #e8d8b9,      #eccec5,      #a3e9eb,      #bdbdf0,      #eec1ea    );    box-shadow: 0 0 5px rgb(66, 68, 68);    position: relative;    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite !important;  }  @-webkit-keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }  @-moz-keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }  @keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }    /* 黑夜模式适配 */  [data-theme="dark"] #aside-content > .card-widget.card-info {    background: #191919ee;  }    /* 个人信息Follow me按钮 */  #aside-content > .card-widget.card-info > #card-info-btn {    background-color: #3eb8be;    border-radius: 8px;  }]]></content>
+        <content type="html"><![CDATA[/* 雪花特效 */[data-theme="light"] #snow{    display: block;    position: fixed;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    z-index: -2;  }    /* 雪花黑夜模式不显示 */  [data-theme="dark"] #snow{    display: none;  }  ]]></content>
       
     </entry>
     
@@ -77,21 +77,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/snow.css"/>
-      <url>/css/snow.css</url>
+      <link href="/css/%E4%B8%AA%E4%BA%BA%E5%8D%A1%E7%89%87%E6%B8%90%E5%8F%98%E8%89%B2.css"/>
+      <url>/css/%E4%B8%AA%E4%BA%BA%E5%8D%A1%E7%89%87%E6%B8%90%E5%8F%98%E8%89%B2.css</url>
       
-        <content type="html"><![CDATA[/* 雪花特效 */[data-theme="light"] #snow{    display: block;    position: fixed;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    z-index: -2;  }    /* 雪花黑夜模式不显示 */  [data-theme="dark"] #snow{    display: none;  }  ]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/css/%E4%B8%80%E5%9B%BE%E6%B5%81.css"/>
-      <url>/css/%E4%B8%80%E5%9B%BE%E6%B5%81.css</url>
-      
-        <content type="html"><![CDATA[/* 页脚与头图透明 */#footer {    background: transparent !important;  }#page-header {    background: transparent !important;  }    /* 白天模式遮罩透明 */#footer::before {    background: transparent !important;  }#page-header::before {    background: transparent !important;  }    /* 夜间模式遮罩透明 */  [data-theme="dark"] #footer::before {    background: transparent !important;  }  [data-theme="dark"] #page-header::before {    background: transparent !important;  }]]></content>
+        <content type="html"><![CDATA[/* 侧边栏个人信息卡片动态渐变色 */#aside-content > .card-widget.card-info {    background: linear-gradient(      -45deg,      #e8d8b9,      #eccec5,      #a3e9eb,      #bdbdf0,      #eec1ea    );    box-shadow: 0 0 5px rgb(66, 68, 68);    position: relative;    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite !important;  }  @-webkit-keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }  @-moz-keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }  @keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }    /* 黑夜模式适配 */  [data-theme="dark"] #aside-content > .card-widget.card-info {    background: #191919ee;  }    /* 个人信息Follow me按钮 */  #aside-content > .card-widget.card-info > #card-info-btn {    background-color: #3eb8be;    border-radius: 8px;  }]]></content>
       
     </entry>
     
@@ -114,6 +103,17 @@
       <url>/css/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.css</url>
       
         <content type="html"><![CDATA[/* 背景宇宙星光  */#universe{    display: block;    position: fixed;    margin: 0;    padding: 0;    border: 0;    outline: 0;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */    z-index: -1;  }]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/%E4%B8%80%E5%9B%BE%E6%B5%81.css"/>
+      <url>/css/%E4%B8%80%E5%9B%BE%E6%B5%81.css</url>
+      
+        <content type="html"><![CDATA[/* 页脚与头图透明 */#footer {    background: transparent !important;  }#page-header {    background: transparent !important;  }    /* 白天模式遮罩透明 */#footer::before {    background: transparent !important;  }#page-header::before {    background: transparent !important;  }    /* 夜间模式遮罩透明 */  [data-theme="dark"] #footer::before {    background: transparent !important;  }  [data-theme="dark"] #page-header::before {    background: transparent !important;  }]]></content>
       
     </entry>
     
@@ -154,6 +154,17 @@
     
     <entry>
       <title></title>
+      <link href="/js/runtime.js"/>
+      <url>/js/runtime.js</url>
+      
+        <content type="html"><![CDATA[var now=new Date;function createtime(){    var t=new Date("11/15/2024 00:00:00");    now.setTime(now.getTime()+250);    var e=(now-t)/1e3/60/60/24,a=Math.floor(e),n=(now-t)/1e3/60/60-24*a,r=Math.floor(n);1==String(r).length&&(r="0"+r);    var s=(now-t)/1e3/60-1440*a-60*r,i=Math.floor(s);1==String(i).length&&(i="0"+i);    var o=(now-t)/1e3-86400*a-3600*r-60*i,l=Math.round(o);1==String(l).length&&(l="0"+l);let g="";    g=r<18&&r>=9        ?`<img class='boardsign' src='/img/BLRQF-摸鱼中-7cfcoo.svg' title='今天，也要元气满满哦！'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`        :`<img class='boardsign' src='/img/BLRQF-晚安啦-7cfcoo.svg' title='晚上就不要熬夜了，早点睡~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`,        document.getElementById("workboard")&&        (document.getElementById("workboard").innerHTML=g)}setInterval((()=>{createtime()}),250);]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
       <link href="/js/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.js"/>
       <url>/js/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.js</url>
       
@@ -169,17 +180,6 @@
       <url>/js/%E7%BD%91%E7%AB%99%E6%81%B6%E6%90%9E%E6%A0%87%E9%A2%98.js</url>
       
         <content type="html"><![CDATA[//动态标题var OriginTitile = document.title;var titleTime;document.addEventListener('visibilitychange', function () {  if (document.hidden) {    //离开当前页面时标签显示内容    document.title = '👀跑哪里去了~';    clearTimeout(titleTime);  } else {    //返回当前页面时标签显示内容    document.title = '🐖抓到你啦～';    //两秒后变回正常标题    titleTime = setTimeout(function () {      document.title = OriginTitile;    }, 2000);  }});]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/js/runtime.js"/>
-      <url>/js/runtime.js</url>
-      
-        <content type="html"><![CDATA[var now=new Date;function createtime(){    var t=new Date("11/15/2024 00:00:00");    now.setTime(now.getTime()+250);    var e=(now-t)/1e3/60/60/24,a=Math.floor(e),n=(now-t)/1e3/60/60-24*a,r=Math.floor(n);1==String(r).length&&(r="0"+r);    var s=(now-t)/1e3/60-1440*a-60*r,i=Math.floor(s);1==String(i).length&&(i="0"+i);    var o=(now-t)/1e3-86400*a-3600*r-60*i,l=Math.round(o);1==String(l).length&&(l="0"+l);let g="";    g=r<18&&r>=9        ?`<img class='boardsign' src='/img/BLRQF-摸鱼中-7cfcoo.svg' title='今天，也要元气满满哦！'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`        :`<img class='boardsign' src='/img/BLRQF-晚安啦-7cfcoo.svg' title='晚上就不要熬夜了，早点睡~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`,        document.getElementById("workboard")&&        (document.getElementById("workboard").innerHTML=g)}setInterval((()=>{createtime()}),250);]]></content>
       
     </entry>
     
