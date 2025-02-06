@@ -32,9 +32,20 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title></title>
+      <link href="/css/snow.css"/>
+      <url>/css/snow.css</url>
+      
+        <content type="html"><![CDATA[/* 雪花特效 */[data-theme="light"] #snow{    display: block;    position: fixed;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    z-index: -2;  }    /* 雪花黑夜模式不显示 */  [data-theme="dark"] #snow{    display: none;  }  ]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -55,10 +66,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/snow.css"/>
-      <url>/css/snow.css</url>
+      <link href="/css/%E5%AF%BC%E8%88%AA%E6%A0%8F.css"/>
+      <url>/css/%E5%AF%BC%E8%88%AA%E6%A0%8F.css</url>
       
-        <content type="html"><![CDATA[/* 雪花特效 */[data-theme="light"] #snow{    display: block;    position: fixed;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    z-index: -2;  }    /* 雪花黑夜模式不显示 */  [data-theme="dark"] #snow{    display: none;  }  ]]></content>
+        <content type="html"><![CDATA[/* 一级菜单居中 */#nav .menus_items {    position: absolute !important;    width: fit-content !important;    left: 50% !important;    transform: translateX(-50%) !important;  }  /* 子菜单横向展示 */  #nav .menus_items .menus_item:hover .menus_item_child {    display: flex !important;  }  /* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */  .menus_items .menus_item:nth-child(2) .menus_item_child {    left: -125px;  }]]></content>
       
     </entry>
     
@@ -66,10 +77,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.css"/>
-      <url>/css/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.css</url>
+      <link href="/css/%E5%9B%BE%E6%A0%87%E5%A4%A7%E5%B0%8F.css"/>
+      <url>/css/%E5%9B%BE%E6%A0%87%E5%A4%A7%E5%B0%8F.css</url>
       
-        <content type="html"><![CDATA[/* 背景宇宙星光  */#universe{    display: block;    position: fixed;    margin: 0;    padding: 0;    border: 0;    outline: 0;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */    z-index: -1;  }]]></content>
+        <content type="html"><![CDATA[svg.icon {    width: 1.30em;    height: 1.30em;    vertical-align: -0.15em;    fill: currentColor;    overflow: hidden;  }/*社交图标*/svg.social_icon {    width: 1.28em;    height: 1.28em;    vertical-align: -0.15em;    fill: currentColor;    overflow: hidden;}]]></content>
       
     </entry>
     
@@ -88,19 +99,30 @@
     
     <entry>
       <title></title>
-      <link href="/css/%E5%9B%BE%E6%A0%87%E5%A4%A7%E5%B0%8F.css"/>
-      <url>/css/%E5%9B%BE%E6%A0%87%E5%A4%A7%E5%B0%8F.css</url>
+      <link href="/css/%E4%B8%AA%E4%BA%BA%E5%8D%A1%E7%89%87%E6%B8%90%E5%8F%98%E8%89%B2.css"/>
+      <url>/css/%E4%B8%AA%E4%BA%BA%E5%8D%A1%E7%89%87%E6%B8%90%E5%8F%98%E8%89%B2.css</url>
       
-        <content type="html"><![CDATA[svg.icon {    width: 1.30em;    height: 1.30em;    vertical-align: -0.15em;    fill: currentColor;    overflow: hidden;  }/*社交图标*/svg.social_icon {    width: 1.28em;    height: 1.28em;    vertical-align: -0.15em;    fill: currentColor;    overflow: hidden;}]]></content>
+        <content type="html"><![CDATA[/* 侧边栏个人信息卡片动态渐变色 */#aside-content > .card-widget.card-info {    background: linear-gradient(      -45deg,      #e8d8b9,      #eccec5,      #a3e9eb,      #bdbdf0,      #eec1ea    );    box-shadow: 0 0 5px rgb(66, 68, 68);    position: relative;    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite !important;  }  @-webkit-keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }  @-moz-keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }  @keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }    /* 黑夜模式适配 */  [data-theme="dark"] #aside-content > .card-widget.card-info {    background: #191919ee;  }    /* 个人信息Follow me按钮 */  #aside-content > .card-widget.card-info > #card-info-btn {    background-color: #3eb8be;    border-radius: 8px;  }]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title></title>
+      <link href="/css/%E9%A1%B5%E8%84%9A.css"/>
+      <url>/css/%E9%A1%B5%E8%84%9A.css</url>
+      
+        <content type="html"><![CDATA[/* 页脚样式 */#ft {    max-width: 1200px;    margin: 0 auto 12px;    display: flex;    color: rgb(255 255 255 / 80%) !important;    text-align: left;    flex-wrap: wrap;  }    .ft-item-1,  .ft-item-2 {    display: flex;    height: 100%;    padding: 2px 14px;  }    .ft-item-1 {    flex-direction: column;    flex: 2;  }    .ft-item-2 {    flex: 1;    flex-direction: column;  }    .t-top {    display: flex;  }    .t-top .t-t-l {    display: flex;    flex-direction: column;    flex: 1.4;    margin-right: 10px;  }    .t-top .t-t-l .bg-ad {    width: 85%;    border-radius: 10px;    padding: 0 10px;  }    .btn-xz-box {    margin-top: 10px;  }    /* 按钮背景颜色等 */  .btn-xz {    display: block;    background-color: var(--btn-bg);    color: var(--btn-color);    text-align: center;    line-height: 2.4;    margin: 8px 0;  }    .btn-xz:hover {    text-decoration: none !important;  }  /* 按钮悬浮颜色 */  .btn-xz-box:hover .btn-xz {    background-color: var(--text-bg-hover);  }    .t-top .t-t-r {    display: flex;    flex-direction: column;    flex: 1;  }    .ft-links {    padding: 0 14px;    list-style: none;    margin-top: 0 !important;  }    .ft-links li a {    display: inline-block !important;    width: 50%;  }  /* 链接悬浮颜色 */  .ft-links li a:hover {    text-decoration: none !important;    color: var(--theme-color) !important;  }    .ft-item-2 .ft-img-group {    width: 100%;  }    .ft-t {    font-size: 1.1rem;    margin-bottom: 20px;    line-height: 1;    font-weight: 600;  }    .t-l-t {    padding-left: 14px;  }    .ft-item-2 .ft-img-group .img-group-item {    display: inline-block;    width: 18.4%;    margin-right: 14px;    margin-bottom: 6px;  }    .ft-item-2 .ft-img-group .img-group-item a {    display: inline-block;    width: 100%;    height: 100%;  }    .ft-item-2 .ft-img-group .img-group-item a img {    width: 100%;    max-height: 80px;    border-radius: 10px;  }  /* 头像悬浮颜色框 */  .ft-item-2 .ft-img-group .img-group-item a img:hover {    border: 2px solid var(--theme-color);  }    @media screen and (max-width: 768px) {    .ft-item-1 {      flex-basis: 100% !important;    }      .ft-item-2 {      flex-basis: 100% !important;    }      .t-top .t-t-l .bg-ad {      width: 100%;    }  }    @media screen and (max-width: 576px) {    .t-top {      flex-wrap: wrap;    }      .t-top .t-t-l {      flex-basis: 100% !important;    }      .t-top .t-t-r {      margin-top: 16px;      flex-basis: 100% !important;    }  }  #footer-wrap a {    border-radius: 30px;  }  #footer-wrap {    padding: 20px 20px;  }    /* 页脚心跳动画 */  #heartbeat {    color: red;    animation: iconAnimate 1s ease-in-out infinite;  }  @-moz-keyframes iconAnimate {    0%,    100% {      transform: scale(1);    }    10%,    30% {      transform: scale(0.9);    }    20%,    40%,    60%,    80% {      transform: scale(1.1);    }    50%,    70% {      transform: scale(1.1);    }  }  @-webkit-keyframes iconAnimate {    0%,    100% {      transform: scale(1);    }    10%,    30% {      transform: scale(0.9);    }    20%,    40%,    60%,    80% {      transform: scale(1.1);    }    50%,    70% {      transform: scale(1.1);    }  }  @-o-keyframes iconAnimate {    0%,    100% {      transform: scale(1);    }    10%,    30% {      transform: scale(0.9);    }    20%,    40%,    60%,    80% {      transform: scale(1.1);    }    50%,    70% {      transform: scale(1.1);    }  }  @keyframes iconAnimate {    0%,    100% {      transform: scale(1);    }    10%,    30% {      transform: scale(0.9);    }    20%,    40%,    60%,    80% {      transform: scale(1.1);    }    50%,    70% {      transform: scale(1.1);    }  }]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -121,21 +143,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/%E5%AF%BC%E8%88%AA%E6%A0%8F.css"/>
-      <url>/css/%E5%AF%BC%E8%88%AA%E6%A0%8F.css</url>
+      <link href="/css/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.css"/>
+      <url>/css/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.css</url>
       
-        <content type="html"><![CDATA[/* 一级菜单居中 */#nav .menus_items {    position: absolute !important;    width: fit-content !important;    left: 50% !important;    transform: translateX(-50%) !important;  }  /* 子菜单横向展示 */  #nav .menus_items .menus_item:hover .menus_item_child {    display: flex !important;  }  /* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */  .menus_items .menus_item:nth-child(2) .menus_item_child {    left: -125px;  }]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/js/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.js"/>
-      <url>/js/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.js</url>
-      
-        <content type="html"><![CDATA[function dark() {window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var n,e,i,h,t=.05,s=document.getElementById("universe"),o=!0,a="180,184,240",r="226,225,142",d="226,225,224",c=[];function f(){n=window.innerWidth,e=window.innerHeight,i=.216*n,s.setAttribute("width",n),s.setAttribute("height",e)}function u(){h.clearRect(0,0,n,e);for(var t=c.length,i=0;i<t;i++){var s=c[i];s.move(),s.fadeIn(),s.fadeOut(),s.draw()}}function y(){this.reset=function(){this.giant=m(3),this.comet=!this.giant&&!o&&m(10),this.x=l(0,n-10),this.y=l(0,e),this.r=l(1.1,2.6),this.dx=l(t,6*t)+(this.comet+1-1)*t*l(50,120)+2*t,this.dy=-l(t,6*t)-(this.comet+1-1)*t*l(50,120),this.fadingOut=null,this.fadingIn=!0,this.opacity=0,this.opacityTresh=l(.2,1-.4*(this.comet+1-1)),this.do=l(5e-4,.002)+.001*(this.comet+1-1)},this.fadeIn=function(){this.fadingIn&&(this.fadingIn=!(this.opacity>this.opacityTresh),this.opacity+=this.do)},this.fadeOut=function(){this.fadingOut&&(this.fadingOut=!(this.opacity<0),this.opacity-=this.do/2,(this.x>n||this.y<0)&&(this.fadingOut=!1,this.reset()))},this.draw=function(){if(h.beginPath(),this.giant)h.fillStyle="rgba("+a+","+this.opacity+")",h.arc(this.x,this.y,2,0,2*Math.PI,!1);else if(this.comet){h.fillStyle="rgba("+d+","+this.opacity+")",h.arc(this.x,this.y,1.5,0,2*Math.PI,!1);for(var t=0;t<30;t++)h.fillStyle="rgba("+d+","+(this.opacity-this.opacity/20*t)+")",h.rect(this.x-this.dx/4*t,this.y-this.dy/4*t-2,2,2),h.fill()}else h.fillStyle="rgba("+r+","+this.opacity+")",h.rect(this.x,this.y,this.r,this.r);h.closePath(),h.fill()},this.move=function(){this.x+=this.dx,this.y+=this.dy,!1===this.fadingOut&&this.reset(),(this.x>n-n/4||this.y<0)&&(this.fadingOut=!0)},setTimeout(function(){o=!1},50)}function m(t){return Math.floor(1e3*Math.random())+1<10*t}function l(t,i){return Math.random()*(i-t)+t}f(),window.addEventListener("resize",f,!1),function(){h=s.getContext("2d");for(var t=0;t<i;t++)c[t]=new y,c[t].reset();u()}(),function t(){document.getElementsByTagName('html')[0].getAttribute('data-theme')=='dark'&&u(),window.requestAnimationFrame(t)}()};dark()]]></content>
+        <content type="html"><![CDATA[/* 背景宇宙星光  */#universe{    display: block;    position: fixed;    margin: 0;    padding: 0;    border: 0;    outline: 0;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */    z-index: -1;  }]]></content>
       
     </entry>
     
@@ -154,21 +165,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/%E4%B8%AA%E4%BA%BA%E5%8D%A1%E7%89%87%E6%B8%90%E5%8F%98%E8%89%B2.css"/>
-      <url>/css/%E4%B8%AA%E4%BA%BA%E5%8D%A1%E7%89%87%E6%B8%90%E5%8F%98%E8%89%B2.css</url>
+      <link href="/js/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.js"/>
+      <url>/js/%E6%B5%81%E6%98%9F%E8%83%8C%E6%99%AF.js</url>
       
-        <content type="html"><![CDATA[/* 侧边栏个人信息卡片动态渐变色 */#aside-content > .card-widget.card-info {    background: linear-gradient(      -45deg,      #e8d8b9,      #eccec5,      #a3e9eb,      #bdbdf0,      #eec1ea    );    box-shadow: 0 0 5px rgb(66, 68, 68);    position: relative;    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite !important;  }  @-webkit-keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }  @-moz-keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }  @keyframes Gradient {    0% {      background-position: 0% 50%;    }    50% {      background-position: 100% 50%;    }    100% {      background-position: 0% 50%;    }  }    /* 黑夜模式适配 */  [data-theme="dark"] #aside-content > .card-widget.card-info {    background: #191919ee;  }    /* 个人信息Follow me按钮 */  #aside-content > .card-widget.card-info > #card-info-btn {    background-color: #3eb8be;    border-radius: 8px;  }]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>友链</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[function dark() {window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var n,e,i,h,t=.05,s=document.getElementById("universe"),o=!0,a="180,184,240",r="226,225,142",d="226,225,224",c=[];function f(){n=window.innerWidth,e=window.innerHeight,i=.216*n,s.setAttribute("width",n),s.setAttribute("height",e)}function u(){h.clearRect(0,0,n,e);for(var t=c.length,i=0;i<t;i++){var s=c[i];s.move(),s.fadeIn(),s.fadeOut(),s.draw()}}function y(){this.reset=function(){this.giant=m(3),this.comet=!this.giant&&!o&&m(10),this.x=l(0,n-10),this.y=l(0,e),this.r=l(1.1,2.6),this.dx=l(t,6*t)+(this.comet+1-1)*t*l(50,120)+2*t,this.dy=-l(t,6*t)-(this.comet+1-1)*t*l(50,120),this.fadingOut=null,this.fadingIn=!0,this.opacity=0,this.opacityTresh=l(.2,1-.4*(this.comet+1-1)),this.do=l(5e-4,.002)+.001*(this.comet+1-1)},this.fadeIn=function(){this.fadingIn&&(this.fadingIn=!(this.opacity>this.opacityTresh),this.opacity+=this.do)},this.fadeOut=function(){this.fadingOut&&(this.fadingOut=!(this.opacity<0),this.opacity-=this.do/2,(this.x>n||this.y<0)&&(this.fadingOut=!1,this.reset()))},this.draw=function(){if(h.beginPath(),this.giant)h.fillStyle="rgba("+a+","+this.opacity+")",h.arc(this.x,this.y,2,0,2*Math.PI,!1);else if(this.comet){h.fillStyle="rgba("+d+","+this.opacity+")",h.arc(this.x,this.y,1.5,0,2*Math.PI,!1);for(var t=0;t<30;t++)h.fillStyle="rgba("+d+","+(this.opacity-this.opacity/20*t)+")",h.rect(this.x-this.dx/4*t,this.y-this.dy/4*t-2,2,2),h.fill()}else h.fillStyle="rgba("+r+","+this.opacity+")",h.rect(this.x,this.y,this.r,this.r);h.closePath(),h.fill()},this.move=function(){this.x+=this.dx,this.y+=this.dy,!1===this.fadingOut&&this.reset(),(this.x>n-n/4||this.y<0)&&(this.fadingOut=!0)},setTimeout(function(){o=!1},50)}function m(t){return Math.floor(1e3*Math.random())+1<10*t}function l(t,i){return Math.random()*(i-t)+t}f(),window.addEventListener("resize",f,!1),function(){h=s.getContext("2d");for(var t=0;t<i;t++)c[t]=new y,c[t].reset();u()}(),function t(){document.getElementsByTagName('html')[0].getAttribute('data-theme')=='dark'&&u(),window.requestAnimationFrame(t)}()};dark()]]></content>
       
     </entry>
     
@@ -176,10 +176,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/%E9%A1%B5%E8%84%9A.css"/>
-      <url>/css/%E9%A1%B5%E8%84%9A.css</url>
+      <link href="/js/%E7%BD%91%E7%AB%99%E6%81%B6%E6%90%9E%E6%A0%87%E9%A2%98.js"/>
+      <url>/js/%E7%BD%91%E7%AB%99%E6%81%B6%E6%90%9E%E6%A0%87%E9%A2%98.js</url>
       
-        <content type="html"><![CDATA[/* 页脚样式 */#ft {    max-width: 1200px;    margin: 0 auto 12px;    display: flex;    color: rgb(255 255 255 / 80%) !important;    text-align: left;    flex-wrap: wrap;  }    .ft-item-1,  .ft-item-2 {    display: flex;    height: 100%;    padding: 2px 14px;  }    .ft-item-1 {    flex-direction: column;    flex: 2;  }    .ft-item-2 {    flex: 1;    flex-direction: column;  }    .t-top {    display: flex;  }    .t-top .t-t-l {    display: flex;    flex-direction: column;    flex: 1.4;    margin-right: 10px;  }    .t-top .t-t-l .bg-ad {    width: 85%;    border-radius: 10px;    padding: 0 10px;  }    .btn-xz-box {    margin-top: 10px;  }    /* 按钮背景颜色等 */  .btn-xz {    display: block;    background-color: var(--btn-bg);    color: var(--btn-color);    text-align: center;    line-height: 2.4;    margin: 8px 0;  }    .btn-xz:hover {    text-decoration: none !important;  }  /* 按钮悬浮颜色 */  .btn-xz-box:hover .btn-xz {    background-color: var(--text-bg-hover);  }    .t-top .t-t-r {    display: flex;    flex-direction: column;    flex: 1;  }    .ft-links {    padding: 0 14px;    list-style: none;    margin-top: 0 !important;  }    .ft-links li a {    display: inline-block !important;    width: 50%;  }  /* 链接悬浮颜色 */  .ft-links li a:hover {    text-decoration: none !important;    color: var(--theme-color) !important;  }    .ft-item-2 .ft-img-group {    width: 100%;  }    .ft-t {    font-size: 1.1rem;    margin-bottom: 20px;    line-height: 1;    font-weight: 600;  }    .t-l-t {    padding-left: 14px;  }    .ft-item-2 .ft-img-group .img-group-item {    display: inline-block;    width: 18.4%;    margin-right: 14px;    margin-bottom: 6px;  }    .ft-item-2 .ft-img-group .img-group-item a {    display: inline-block;    width: 100%;    height: 100%;  }    .ft-item-2 .ft-img-group .img-group-item a img {    width: 100%;    max-height: 80px;    border-radius: 10px;  }  /* 头像悬浮颜色框 */  .ft-item-2 .ft-img-group .img-group-item a img:hover {    border: 2px solid var(--theme-color);  }    @media screen and (max-width: 768px) {    .ft-item-1 {      flex-basis: 100% !important;    }      .ft-item-2 {      flex-basis: 100% !important;    }      .t-top .t-t-l .bg-ad {      width: 100%;    }  }    @media screen and (max-width: 576px) {    .t-top {      flex-wrap: wrap;    }      .t-top .t-t-l {      flex-basis: 100% !important;    }      .t-top .t-t-r {      margin-top: 16px;      flex-basis: 100% !important;    }  }  #footer-wrap a {    border-radius: 30px;  }  #footer-wrap {    padding: 20px 20px;  }    /* 页脚心跳动画 */  #heartbeat {    color: red;    animation: iconAnimate 1s ease-in-out infinite;  }  @-moz-keyframes iconAnimate {    0%,    100% {      transform: scale(1);    }    10%,    30% {      transform: scale(0.9);    }    20%,    40%,    60%,    80% {      transform: scale(1.1);    }    50%,    70% {      transform: scale(1.1);    }  }  @-webkit-keyframes iconAnimate {    0%,    100% {      transform: scale(1);    }    10%,    30% {      transform: scale(0.9);    }    20%,    40%,    60%,    80% {      transform: scale(1.1);    }    50%,    70% {      transform: scale(1.1);    }  }  @-o-keyframes iconAnimate {    0%,    100% {      transform: scale(1);    }    10%,    30% {      transform: scale(0.9);    }    20%,    40%,    60%,    80% {      transform: scale(1.1);    }    50%,    70% {      transform: scale(1.1);    }  }  @keyframes iconAnimate {    0%,    100% {      transform: scale(1);    }    10%,    30% {      transform: scale(0.9);    }    20%,    40%,    60%,    80% {      transform: scale(1.1);    }    50%,    70% {      transform: scale(1.1);    }  }]]></content>
+        <content type="html"><![CDATA[//动态标题var OriginTitile = document.title;var titleTime;document.addEventListener('visibilitychange', function () {  if (document.hidden) {    //离开当前页面时标签显示内容    document.title = '👀跑哪里去了~';    clearTimeout(titleTime);  } else {    //返回当前页面时标签显示内容    document.title = '🐖抓到你啦～';    //两秒后变回正常标题    titleTime = setTimeout(function () {      document.title = OriginTitile;    }, 2000);  }});]]></content>
       
     </entry>
     
@@ -197,11 +197,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/js/%E7%BD%91%E7%AB%99%E6%81%B6%E6%90%9E%E6%A0%87%E9%A2%98.js"/>
-      <url>/js/%E7%BD%91%E7%AB%99%E6%81%B6%E6%90%9E%E6%A0%87%E9%A2%98.js</url>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA[//动态标题var OriginTitile = document.title;var titleTime;document.addEventListener('visibilitychange', function () {  if (document.hidden) {    //离开当前页面时标签显示内容    document.title = '👀跑哪里去了~';    clearTimeout(titleTime);  } else {    //返回当前页面时标签显示内容    document.title = '🐖抓到你啦～';    //两秒后变回正常标题    titleTime = setTimeout(function () {      document.title = OriginTitile;    }, 2000);  }});]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
