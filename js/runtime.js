@@ -7,8 +7,7 @@ function createtime(){
     var o=(now-t)/1e3-86400*a-3600*r-60*i,l=Math.round(o);
 1==String(l).length&&(l="0"+l);
 let g="";
-    g=r<18&&r>=9
+    g=r<21&&r>=9
         ?`<img class='boardsign' src='/img/BLRQF-摸鱼中-7cfcoo.svg' title='今天，也要元气满满哦！'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`
         :`<img class='boardsign' src='/img/BLRQF-晚安啦-7cfcoo.svg' title='晚上就不要熬夜了，早点睡~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`,
-        document.getElementById("workboard")&&
-        (document.getElementById("workboard").innerHTML=g)}setInterval((()=>{createtime()}),250);
+        document.getElementById("workboard")&&(document.getElementById("workboard").innerHTML=g)}setInterval((()=>{createtime()}),250);
