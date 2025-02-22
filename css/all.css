@@ -524,3 +524,110 @@ svg.social_icon {
       transform: scale(1.1);
     }
   }
+
+/* 定义 CSS 变量 */
+:root {
+  --animation-name: ccc;
+  --animation-duration-normal: 4s;
+  --animation-duration-hover: 6s;
+  --theme-color: #e37fd9; /* 请替换为实际的主题颜色 */
+}
+
+/* 文章页 H1 - H6 图标公共样式 */
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+  -webkit-animation: var(--animation-name) var(--animation-duration-normal) linear infinite;
+  animation: var(--animation-name) var(--animation-duration-normal) linear infinite;
+}
+
+/* 定义动画 */
+@keyframes ccc {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+
+/* 设置不同级别标题的图标样式 */
+#content-inner.layout h1::before {
+  --icon-color: #ef50a8;
+  --left-margin: -1.55rem;
+  --font-size: 1.3rem;
+  --top-margin: -0.23rem;
+}
+
+#content-inner.layout h2::before {
+  --icon-color: #fb7061;
+  --left-margin: -1.35rem;
+  --font-size: 1.1rem;
+  --top-margin: -0.12rem;
+}
+
+#content-inner.layout h3::before {
+  --icon-color: #ffbf00;
+  --left-margin: -1.22rem;
+  --font-size: 0.95rem;
+  --top-margin: -0.09rem;
+}
+
+#content-inner.layout h4::before {
+  --icon-color: #a9e000;
+  --left-margin: -1.05rem;
+  --font-size: 0.8rem;
+  --top-margin: -0.09rem;
+}
+
+#content-inner.layout h5::before {
+  --icon-color: #57c850;
+  --left-margin: -0.9rem;
+  --font-size: 0.7rem;
+  --top-margin: 0rem;
+}
+
+#content-inner.layout h6::before {
+  --icon-color: #5ec1e0;
+  --left-margin: -0.9rem;
+  --font-size: 0.66rem;
+  --top-margin: 0rem;
+}
+
+#content-inner.layout h1::before,
+#content-inner.layout h2::before,
+#content-inner.layout h3::before,
+#content-inner.layout h4::before,
+#content-inner.layout h5::before,
+#content-inner.layout h6::before {
+  color: var(--icon-color);
+  margin-left: var(--left-margin);
+  font-size: var(--font-size);
+  margin-top: var(--top-margin);
+}
+
+/* 设置悬停效果 */
+#content-inner.layout h1:hover,
+#content-inner.layout h2:hover,
+#content-inner.layout h3:hover,
+#content-inner.layout h4:hover,
+#content-inner.layout h5:hover,
+#content-inner.layout h6:hover {
+  color: var(--theme-color);
+}
+
+#content-inner.layout h1:hover::before,
+#content-inner.layout h2:hover::before,
+#content-inner.layout h3:hover::before,
+#content-inner.layout h4:hover::before,
+#content-inner.layout h5:hover::before,
+#content-inner.layout h6:hover::before {
+  color: var(--theme-color);
+  -webkit-animation: var(--animation-name) var(--animation-duration-hover) linear infinite;
+  animation: var(--animation-name) var(--animation-duration-hover) linear infinite;
+}
