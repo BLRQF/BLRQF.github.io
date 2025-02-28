@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>电脑验机和优化建议</title>
+      <link href="/2025/%E7%94%B5%E8%84%91%E9%AA%8C%E6%9C%BA%E5%92%8C%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE/"/>
+      <url>/2025/%E7%94%B5%E8%84%91%E9%AA%8C%E6%9C%BA%E5%92%8C%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="验机有什么用"><a href="#验机有什么用" class="headerlink" title="验机有什么用"></a>验机有什么用</h3><p>&emsp;&emsp;如果买新电脑前有自己去在网上找攻略，那一定会看到很多博主说第一步是 <strong>“验机”</strong>。简单来，说其目的就是为了看自己有没有被坑，是否是原装，配置是否被更换等等。主要包括检查外观、开机、跳过联网、查看配置、基础设置等等。其中 <strong>“跳过联网”</strong> 是非常关键的一步，因为电脑联网会自动激活系统，一但激活，出现问题后一般是不给退的。即便是后面重装系统啥的，跳过联网可以省去一部分相当繁琐的步骤（本人也是头铁的尝试过不跳过，可谓是相当后悔）。</p><hr><h3 id="检查外观"><a href="#检查外观" class="headerlink" title="检查外观"></a>检查外观</h3><p>&emsp;&emsp;虽然我觉得这个算是废话，但还是仔细说说吧：</p><ol><li>首先观察快递包装是否破损，然后再打开内包装。</li><li><strong>内包装</strong>需要特别注意一下，一般笔记本的封条都经过特殊设计，上面会有品牌logo，撕下后会留下印迹，新机的是规则的，同时也要注意封条是否平整、有气泡等等。</li><li>再看看产品信息标签，是不是自己所买的型号，最后取出电脑，最好是可以带个手套，防止商家甩锅。观察外观是否有划痕，看看螺丝有没有拧过的痕迹。<strong>值得注意的是</strong>，有的电脑你买的时候可能是加装了内存的，如果是那种，那么肯定是拆过的（并不会影响啥，但还是不太建议买那种，自己买固态加上去更有性价比点，也能避免被配置坑的问题）</li></ol><h3 id="打开电脑"><a href="#打开电脑" class="headerlink" title="打开电脑"></a>打开电脑</h3><h4 id="开机："><a href="#开机：" class="headerlink" title="开机："></a>开机：</h4><ol><li><strong>不插电</strong>，按一下电源键，如果没开机，那说明电脑没为题，是第一次使用。因为笔记本电脑厂商有一个运输模式，所以第一次使用只有在插上电后才会开机。（也有少数没有运输模式，如<strong>惠普</strong>，<strong>机械革命</strong>）</li><li>通电，开机，进入系统启动界面，前面按自己需要设置，一直到让自己联网这一步，<strong>不要联网！</strong> 顺便提一下，不论是轻薄本还是游戏本，都是在插电情况下才会发挥最大性能，如果没有外出，<strong>请插电使用！</strong> 插电使用不会减少电脑寿命，但是不插电会。我是真遇到有人不插电使用，然后来问为啥很卡的。</li></ol><h4 id="跳过联网："><a href="#跳过联网：" class="headerlink" title="跳过联网："></a>跳过联网：</h4><ol><li>按住键盘上的<code>Shift</code>+<code>F10</code>或者<code>Shift</code>+<code>Fn</code>+<code>F10</code>，此时会弹出<strong>cmd窗口</strong>，在其中输入<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oobe\bypassnro.<span class="built_in">cmd</span></span><br></pre></td></tr></table></figure>然后按下<strong>回车</strong>键会自动重启，等待就好。（如果输入不了，请用鼠标点一下<strong>cmd窗口</strong>）。</li><li>重启后联网界面就会有一个 <strong>“我没有internet链接”</strong> 选项，然后选择<strong>继续执行受限设置</strong>就跳过了。进入系统后，<strong>不要联网！</strong></li></ol><h3 id="验机"><a href="#验机" class="headerlink" title="验机"></a>验机</h3><h4 id="下载工具："><a href="#下载工具：" class="headerlink" title="下载工具："></a>下载工具：</h4><ul><li>将<a href="https://www.tbtool.cn/">图吧工具箱</a>下载到U盘或者手机上，进入系统后将它传入电脑中并打开。（手机使用数据线与电脑连接）。打开如下：<br><img src="https://image.acg.lol/file/2025/02/28/-2025-02-28-202618.png" alt="屏幕截图 2025 02 28 202618"></li></ul><h4 id="查看硬件信息："><a href="#查看硬件信息：" class="headerlink" title="查看硬件信息："></a>查看硬件信息：</h4><ol><li>在左边选择<strong>硬件信息</strong>即可看自己配置，看看是否有出入就行。</li><li>再选择<strong>磁盘工具</strong>，双击 <strong>“Disklnfo(64位)”</strong> 打开，看一下<strong>通电次数</strong>和<strong>健康度</strong>，由于出厂会有调试，<strong>通电次数</strong>在个位数<strong>健康度为100%</strong> 就代表是全新的。</li><li>还是在<strong>磁盘工具</strong>，双击 <strong>“DiskMark(64位)”</strong> 打开，在设置里改为 <strong>“NVMe SSD”</strong>，如下图：<br><img src="https://image.acg.lol/file/2025/02/28/-2025-02-28-205759.png" alt="屏幕截图 2025 02 28 205759"><br>然后将上方依次改为 <strong>1</strong>，<strong>1GiB</strong>，<strong>C盘</strong>。再点击 <strong>“All”</strong> 进行测试，最低要求：<br><strong>REND4K Q1T1</strong>：读 ≥ 50MB&#x2F;s；写 ≥ 100MB&#x2F;s 。<br><strong>SEQ1MQT1</strong> 和 <strong>SEQ1MQ8T1</strong>：标称值的 <strong>80%</strong> 。</li><li>点击左侧<strong>CPU工具</strong>，选择 <strong>“AIDA64”</strong> 打开，在<strong>电源管理</strong>中查看 <strong>“损耗程度”</strong>，<strong>0%</strong> 和 <strong>1%</strong> 为正常。</li></ol><h4 id="检测屏幕："><a href="#检测屏幕：" class="headerlink" title="检测屏幕："></a>检测屏幕：</h4><ul><li>点击左侧<strong>屏幕工具</strong>，双击打开 <strong>“坏点与漏光测试”</strong>，然后观察有没有屏幕坏点，点击鼠标切换画面，按<code>ESC</code>键退出。</li></ul><h4 id="查看键盘："><a href="#查看键盘：" class="headerlink" title="查看键盘："></a>查看键盘：</h4><ul><li>在左侧<strong>外设工具</strong>中双击打开 <strong>“Keyboard Test Utillity”</strong>，然后按下键盘按键，没坏的就行。</li></ul><h4 id="烤机："><a href="#烤机：" class="headerlink" title="烤机："></a>烤机：</h4><ul><li>其实按照上面检测出来就不会有太大问题了，加上我个人并不烤机，所以这里只提一下，想要弄的去<strong>B站</strong>搜一下，我就不多赘述了。</li></ul><h4 id="激活："><a href="#激活：" class="headerlink" title="激活："></a>激活：</h4><ul><li>联网自动激活（顺便提一下，用户名最好是英文，中文的话有时候会出问题，如蓝屏，死机，闪退，进不去程序啥的）。</li></ul><h3 id="一些基本设置"><a href="#一些基本设置" class="headerlink" title="一些基本设置"></a>一些基本设置</h3><ul><li><strong>设置</strong> → <strong>电源和电池</strong> → <strong>电源模式</strong>：选择 <strong>最佳性能</strong> 。</li><li><strong>设置</strong> → <strong>蓝牙和其他设备</strong> → <strong>鼠标</strong> → <strong>其他鼠标设置</strong> → <strong>指针选项</strong> → <strong>提高指针精准度</strong>：<strong>关</strong> 。</li><li>然后就是删除一些不用的软件，改 <strong>存储感知</strong> 那些，在之前文章<a href="/2025/Windows11%E4%BC%98%E5%8C%96%E6%B1%87%E6%80%BB/index.html">Windows11优化汇总</a>中有。</li></ul><h3 id="Edge浏览器"><a href="#Edge浏览器" class="headerlink" title="Edge浏览器"></a>Edge浏览器</h3><h4 id="插件："><a href="#插件：" class="headerlink" title="插件："></a>插件：</h4><ul><li>所有插件都在右上角<code>...</code> → <strong>扩展</strong> → <strong>获取 Microsoft Edge 扩展</strong> 中搜索下载，这里只少数推荐，可以自行发掘。</li></ul><ol><li><strong>AdGuard 广告拦截器</strong>：AdGuard 广告拦截器可有效的拦截所有网页上的所有类型的广告，甚至是在 Facebook，Youtube 以及其它网站的广告！<br>下载完后，在它的设置中如下图设置：<br><img src="https://image.acg.lol/file/2025/02/28/-2025-02-28-224039.png" alt="屏幕截图 2025 02 28 224039"></li><li><strong>iTab新标签页</strong>：iTab是新一代组件式标签页的首创者，是您打造个人学习工作台的浏览器必备插件。简洁美观高效无广，获得了数百万用户的一致好评。<br>根据自己喜好设置，值得一提的是，当你换了浏览器后，再次下载它，只需要扫下二维码就<strong>一切如故</strong> 。</li><li><strong>笔记音乐</strong>：笔记音乐在线畅听高品音乐。<br>一看就懂。</li></ol><h4 id="多线程下载："><a href="#多线程下载：" class="headerlink" title="多线程下载："></a>多线程下载：</h4><ul><li>在浏览器顶部地址栏中输入<code>edge://flags/</code>，然后搜索<code> Parallel downloading</code>，选择 <strong>“Enabled”</strong></li></ul><h4 id="设置："><a href="#设置：" class="headerlink" title="设置："></a>设置：</h4><ul><li><code>...</code> → <strong>设置</strong> → <strong>系统和性能</strong> → 设置如下：<br><img src="https://image.acg.lol/file/2025/02/28/-2025-02-28-230216.png" alt="屏幕截图 2025 02 28 230216"></li><li>至于其他设置，Edge登录后，也会备份你的设置，后面再登录就不用设置了，哪怕是在别的电脑，所以也建议花几分钟时间从头到尾按自己喜好调整一下。我个人认为那些都是人话，就不多说了。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 浏览器设置 </tag>
+            
+            <tag> 验机 </tag>
+            
+            <tag> 跳过联网 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>手机端跳过开屏广告</title>
       <link href="/2025/%E6%89%8B%E6%9C%BA%E7%AB%AF%E8%B7%B3%E8%BF%87%E5%BC%80%E5%B1%8F%E5%B9%BF%E5%91%8A/"/>
       <url>/2025/%E6%89%8B%E6%9C%BA%E7%AB%AF%E8%B7%B3%E8%BF%87%E5%BC%80%E5%B1%8F%E5%B9%BF%E5%91%8A/</url>
