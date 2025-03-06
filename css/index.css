@@ -1343,7 +1343,7 @@ canvas:not(#ribbon-canvas),
   --font-color: #4c4948;
   --hr-border: #d8c6ff;
   --hr-before-color: #c8afff;
-  --search-bg: #f6f8fa;
+  --search-bg: $search-bg;
   --search-input-color: #4c4948;
   --search-a-color: #4c4948;
   --preloader-bg: #37474f;
@@ -1352,8 +1352,8 @@ canvas:not(#ribbon-canvas),
   --tab-botton-bg: #f0f0f0;
   --tab-botton-color: #1f2d3d;
   --tab-button-hover-bg: #dcdcdc;
-  --tab-button-active-bg: #fff;
-  --card-bg: #fff;
+  --tab-button-active-bg: rgba(255,255,255,0.6);
+  --card-bg: rgba(255,255,255,0.6);
   --card-meta: #e37fd9;
   --sidebar-bg: #f6f8fa;
   --sidebar-menu-bg: #fff;
@@ -6164,7 +6164,6 @@ blockquote.pullquote.right {
   --font-color: rgba(255,255,255,0.7);
   --hr-border: rgba(255,255,255,0.4);
   --hr-before-color: rgba(255,255,255,0.7);
-  --search-bg: #121212;
   --search-input-color: rgba(255,255,255,0.7);
   --search-a-color: rgba(255,255,255,0.7);
   --preloader-bg: #0d0d0d;

@@ -181,14 +181,6 @@
 
 /* 侧边栏个人信息卡片动态渐变色 */
 #aside-content > .card-widget.card-info {
-    background: linear-gradient(
-      -45deg,
-      #e8d8b9,
-      #eccec5,
-      #a3e9eb,
-      #bdbdf0,
-      #eec1ea
-    );
     box-shadow: 0 0 5px rgb(66, 68, 68);
     position: relative;
     background-size: 400% 400%;
@@ -196,40 +188,6 @@
     -moz-animation: Gradient 10s ease infinite;
     animation: Gradient 10s ease infinite !important;
   }
-  @-webkit-keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  @-moz-keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  @keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
   /* 黑夜模式适配 */
   [data-theme="dark"] #aside-content > .card-widget.card-info {
     background: #191919ee;
@@ -524,3 +482,183 @@ svg.social_icon {
       transform: scale(1.1);
     }
   }
+
+/* 定义 CSS 变量 */
+:root {
+  --animation-name: ccc;
+  --animation-duration-normal: 4s;
+  --animation-duration-hover: 6s;
+  --theme-color: #e37fd9; /* 请替换为实际的主题颜色 */
+}
+
+/* 文章页 H1 - H6 图标公共样式 */
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+  -webkit-animation: var(--animation-name) var(--animation-duration-normal) linear infinite;
+  animation: var(--animation-name) var(--animation-duration-normal) linear infinite;
+}
+
+/* 定义动画 */
+@keyframes ccc {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+
+/* 设置不同级别标题的图标样式 */
+#content-inner.layout h1::before {
+  --icon-color: #ef50a8;
+  --left-margin: -1.55rem;
+  --font-size: 1.3rem;
+  --top-margin: -0.23rem;
+}
+
+#content-inner.layout h2::before {
+  --icon-color: #fb7061;
+  --left-margin: -1.35rem;
+  --font-size: 1.1rem;
+  --top-margin: -0.12rem;
+}
+
+#content-inner.layout h3::before {
+  --icon-color: #ffbf00;
+  --left-margin: -1.22rem;
+  --font-size: 0.95rem;
+  --top-margin: -0.09rem;
+}
+
+#content-inner.layout h4::before {
+  --icon-color: #a9e000;
+  --left-margin: -1.05rem;
+  --font-size: 0.8rem;
+  --top-margin: -0.09rem;
+}
+
+#content-inner.layout h5::before {
+  --icon-color: #57c850;
+  --left-margin: -0.9rem;
+  --font-size: 0.7rem;
+  --top-margin: 0rem;
+}
+
+#content-inner.layout h6::before {
+  --icon-color: #5ec1e0;
+  --left-margin: -0.9rem;
+  --font-size: 0.66rem;
+  --top-margin: 0rem;
+}
+
+#content-inner.layout h1::before,
+#content-inner.layout h2::before,
+#content-inner.layout h3::before,
+#content-inner.layout h4::before,
+#content-inner.layout h5::before,
+#content-inner.layout h6::before {
+  color: var(--icon-color);
+  margin-left: var(--left-margin);
+  font-size: var(--font-size);
+  margin-top: var(--top-margin);
+}
+
+/* 设置悬停效果 */
+#content-inner.layout h1:hover,
+#content-inner.layout h2:hover,
+#content-inner.layout h3:hover,
+#content-inner.layout h4:hover,
+#content-inner.layout h5:hover,
+#content-inner.layout h6:hover {
+  color: var(--theme-color);
+}
+
+#content-inner.layout h1:hover::before,
+#content-inner.layout h2:hover::before,
+#content-inner.layout h3:hover::before,
+#content-inner.layout h4:hover::before,
+#content-inner.layout h5:hover::before,
+#content-inner.layout h6:hover::before {
+  color: var(--theme-color);
+  -webkit-animation: var(--animation-name) var(--animation-duration-hover) linear infinite;
+  animation: var(--animation-name) var(--animation-duration-hover) linear infinite;
+}
+
+/* winbox */
+/* 由于全屏会出bug，所以直接给他隐藏 */
+
+.winbox {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.wb-full {
+  display: none;
+}
+
+.wb-min {
+  background-position: center;
+}
+
+[data-theme='dark'] .wb-body,
+[data-theme='dark'] #changeBgBox {
+  background: #333 !important;
+}
+
+.bgbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pimgbox,
+.imgbox,
+.box {
+  width: 166px;
+  margin: 10px;
+  background-size: cover
+}
+
+.pimgbox,
+.imgbox {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pimgbox {
+  height: 240px;
+}
+
+.imgbox {
+  height: 95px;
+}
+
+.box {
+  height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  /* 背景 */
+  .pimgbox,
+  .imgbox,
+  .box {
+      height: 73px;
+      width: 135px;
+  }
+  .pimgbox {
+      height: 205px;
+  }
+  /* 2.0新增内容 */    
+  .wb-min {
+      display: none;
+  }
+  #changeBgBox .wb-body::-webkit-scrollbar {
+      display: none;
+  }
+}
