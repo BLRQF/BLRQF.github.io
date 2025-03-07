@@ -37,8 +37,8 @@ const initConfig = {
   },
   night: "toggleNightMode()",
   model: [
-    "/live2d/Diana/Diana.model3.json",
-    "/live2d/Ava/Ava.model3.json",
+    "/live2D/Diana/Diana.model3.json",
+    "/live2D/Ava/Ava.model3.json",
   ],
   tips: true,
   onModelLoad: onModelLoad
