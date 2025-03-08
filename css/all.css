@@ -179,27 +179,6 @@
 }
 
 
-/* 侧边栏个人信息卡片动态渐变色 */
-#aside-content > .card-widget.card-info {
-    box-shadow: 0 0 5px rgb(66, 68, 68);
-    position: relative;
-    background-size: 400% 400%;
-    -webkit-animation: Gradient 10s ease infinite;
-    -moz-animation: Gradient 10s ease infinite;
-    animation: Gradient 10s ease infinite !important;
-  }
-  /* 黑夜模式适配 */
-  [data-theme="dark"] #aside-content > .card-widget.card-info {
-    background: #191919ee;
-  }
-  
-  /* 个人信息Follow me按钮 */
-  #aside-content > .card-widget.card-info > #card-info-btn {
-    background-color: #e37fd9;
-    border-radius: 8px;
-  }
-
-
 /* 背景宇宙星光  */
 #universe{
     display: block;
