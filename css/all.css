@@ -1,26 +1,20 @@
-/* 页脚与头图透明 */
-#footer {
-    background: transparent !important;
-  }
+/* 统一设置页脚和头图的背景为透明 */
+#footer,
 #page-header {
     background: transparent !important;
-  }
-  
-  /* 白天模式遮罩透明 */
-#footer::before {
-    background: transparent !important;
-  }
+}
+
+/* 统一设置白天模式下页脚和头图的遮罩为透明 */
+#footer::before,
 #page-header::before {
     background: transparent !important;
-  }
-  
-  /* 夜间模式遮罩透明 */
-  [data-theme="dark"] #footer::before {
+}
+
+/* 统一设置夜间模式下页脚和头图的遮罩为透明 */
+[data-theme="dark"] #footer::before,
+[data-theme="dark"] #page-header::before {
     background: transparent !important;
-  }
-  [data-theme="dark"] #page-header::before {
-    background: transparent !important;
-  }
+}
 
 
 /* 导航栏 */
@@ -195,7 +189,6 @@
     /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */
     z-index: -1;
   }
-
 
 /* 图标大小 */
 svg.icon {
