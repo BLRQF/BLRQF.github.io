@@ -22,54 +22,49 @@ document.addEventListener('visibilitychange', function () {
 
 // 运行时间
 // 获取当前时间
-let now = new Date();
+let now;
 // 设置起始时间
 let startTime = new Date("2024-11-15T00:00:00");
 
 // 格式化时间，确保时间为两位数
 function formatTime(time) {
-    return String(time).length === 1 ? "0" + time : time;
+  return String(time).length === 1 ? "0" + time : time;
 }
 
 // 计算从起始时间到当前时间的持续时长
 function calculateDuration() {
-    // 获取当前真实时间
-    now = new Date();
-    // 计算时间差（毫秒）
-    const diff = now - startTime;
-    // 计算天数
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    // 计算小时数
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    // 计算分钟数
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    // 计算秒数
-    const seconds = Math.round((diff / 1000) % 60);
+  // 获取当前真实时间
+  now = new Date();
+  const diff = now - startTime;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.round((diff / 1000) % 60);
 
-    // 格式化小时、分钟和秒
-    const formattedHours = formatTime(hours);
-    const formattedMinutes = formatTime(minutes);
-    const formattedSeconds = formatTime(seconds);
+  // 格式化小时、分钟和秒
+  const formattedHours = formatTime(hours);
+  const formattedMinutes = formatTime(minutes);
+  const formattedSeconds = formatTime(seconds);
 
-    return {
-        days,
-        hours: formattedHours,
-        minutes: formattedMinutes,
-        seconds: formattedSeconds
-    };
+  return {
+    days,
+    hours: formattedHours,
+    minutes: formattedMinutes,
+    seconds: formattedSeconds
+  };
 }
 
 // 创建要显示的 HTML 内容
 function createDisplayContent(duration) {
-    // 根据当前小时数选择图片和提示信息
-    const imageSrc = duration.hours < 21 && duration.hours >= 9
-      ? '/img/BLRQF-摸鱼中-7cfcoo.svg'
-      : '/img/BLRQF-晚安啦-7cfcoo.svg';
-    const imageTitle = duration.hours < 21 && duration.hours >= 9
-      ? '今天，也要元气满满哦！'
-      : '晚上就不要熬夜了，早点睡~';
+  // 根据当前小时数选择图片和提示信息
+  const imageSrc = duration.hours < 21 && duration.hours >= 9
+    ? '/img/BLRQF-摸鱼中-7cfcoo.svg'
+    : '/img/BLRQF-晚安啦-7cfcoo.svg';
+  const imageTitle = duration.hours < 21 && duration.hours >= 9
+    ? '今天，也要元气满满哦！'
+    : '晚上就不要熬夜了，早点睡~';
 
-    return `<img class='boardsign' src='${imageSrc}' title='${imageTitle}'>
+  return `<img class='boardsign' src='${imageSrc}' title='${imageTitle}'>
             <span class='textTip'> <br> 本站居然运行了 ${duration.days} 天</span>
             <span id='runtime'> ${duration.hours} 小时 ${duration.minutes} 分 ${duration.seconds} 秒 </span> 
             <i id="heartbeat" class='fas fa-heartbeat'></i>`;
@@ -77,16 +72,16 @@ function createDisplayContent(duration) {
 
 // 更新显示内容的函数
 function createtime() {
-    // 计算持续时长
-    const duration = calculateDuration();
-    // 创建显示内容
-    const displayContent = createDisplayContent(duration);
-    // 获取显示内容的 DOM 元素
-    const workboard = document.getElementById("workboard");
-    if (workboard) {
-        // 更新 DOM 元素的内容
-        workboard.innerHTML = displayContent;
-    }
+  // 计算持续时长
+  const duration = calculateDuration();
+  // 创建显示内容
+  const displayContent = createDisplayContent(duration);
+  // 获取显示内容的 DOM 元素
+  const workboard = document.getElementById("workboard");
+  if (workboard) {
+    // 更新 DOM 元素的内容
+    workboard.innerHTML = displayContent;
+  }
 }
 
 // 每秒更新一次显示内容
