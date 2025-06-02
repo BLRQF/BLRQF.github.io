@@ -7,7 +7,7 @@ let Paul_Pio = function (prop) {
         menu: document.querySelector(".pio-container .pio-action"),
         canvas: document.getElementById("pio"),
         body: document.querySelector(".pio-container"),
-        root: document.location.protocol + '//' + document.location.hostname + '/'
+        root: document.location.origin + '/'
     };
 
     /* - 方法 */
@@ -132,7 +132,7 @@ let Paul_Pio = function (prop) {
         buttons: function () {
             // 返回首页
             elements.home.onclick = function () {
-                location.href = '/';
+                location.href = current.root;
             };
             elements.home.onmouseover = function () {
                 modules.render(prop.content.home || "点击这里回到首页！");
