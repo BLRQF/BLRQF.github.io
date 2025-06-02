@@ -1,8 +1,8 @@
 
-var Paul_Pio = function (prop) {
-    var that = this;
+let Paul_Pio = function (prop) {
+    let that = this;
 
-    var current = {
+    let current = {
         idol: 0,
         menu: document.querySelector(".pio-container .pio-action"),
         canvas: document.getElementById("pio"),
@@ -11,7 +11,7 @@ var Paul_Pio = function (prop) {
     };
 
     /* - 方法 */
-    var modules = {
+    let modules = {
         // 更换模型
         idol: function () {
             current.idol < (prop.model.length - 1) ? current.idol++ : current.idol = 0;
@@ -19,7 +19,7 @@ var Paul_Pio = function (prop) {
         },
         // 创建内容
         create: function (tag, prop) {
-            var e = document.createElement(tag);
+            let e = document.createElement(tag);
             if (prop.class) e.className = prop.class;
             return e;
         },
@@ -53,7 +53,7 @@ var Paul_Pio = function (prop) {
         },
         // 是否为移动设备
         isMobile: function () {
-            var ua = window.navigator.userAgent.toLowerCase();
+            let ua = window.navigator.userAgent.toLowerCase();
             ua = ua.indexOf("mobile") || ua.indexOf("android") || ua.indexOf("ios");
 
             return window.innerWidth < 500 || ua !== -1;
@@ -62,7 +62,7 @@ var Paul_Pio = function (prop) {
     this.modules = modules;
     this.destroy = modules.destroy;
 
-    var elements = {
+    let elements = {
         home: modules.create("span", { class: "pio-home" }),
         skin: modules.create("span", { class: "pio-skin" }),
         info: modules.create("span", { class: "pio-info" }),
@@ -72,21 +72,21 @@ var Paul_Pio = function (prop) {
         show: modules.create("div", { class: "pio-show" })
     };
 
-    var dialog = modules.create("div", { class: "pio-dialog" });
+    let dialog = modules.create("div", { class: "pio-dialog" });
     current.body.appendChild(dialog);
     current.body.appendChild(elements.show);
 
     /* - 提示操作 */
-    var action = {
+    let action = {
         // 欢迎
         welcome: function () {
             if (document.referrer !== "" && document.referrer.indexOf(current.root) === -1) {
-                var referrer = document.createElement('a');
+                let referrer = document.createElement('a');
                 referrer.href = document.referrer;
                 prop.content.referer ? modules.render(prop.content.referer.replace(/%t/, "“" + referrer.hostname + "”")) : modules.render("欢迎来自 “" + referrer.hostname + "” 的朋友！");
             }
             else if (prop.tips) {
-                var text, hour = new Date().getHours();
+                let text, hour = new Date().getHours();
 
                 if (hour > 22 || hour <= 5) {
                     text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛';
@@ -183,10 +183,10 @@ var Paul_Pio = function (prop) {
         custom: function () {
             prop.content.custom.forEach(function (t) {
                 if (!t.type) t.type = "default";
-                var e = document.querySelectorAll(t.selector);
+                let e = document.querySelectorAll(t.selector);
 
                 if (e.length) {
-                    for (var j = 0; j < e.length; j++) {
+                    for (let j = 0; j < e.length; j++) {
                         if (t.type === "read") {
                             e[j].onmouseover = function () {
                                 modules.render("想阅读 %t 吗？".replace(/%t/, "“" + this.innerText + "”"));
@@ -209,7 +209,7 @@ var Paul_Pio = function (prop) {
     };
 
     /* - 运行 */
-    var begin = {
+    let begin = {
         static: function () {
             current.body.classList.add("static");
         },
@@ -219,9 +219,9 @@ var Paul_Pio = function (prop) {
         draggable: function () {
             action.touch(); action.buttons();
 
-            var body = current.body;
+            let body = current.body;
             body.onmousedown = function (downEvent) {
-                var location = {
+                let location = {
                     x: downEvent.clientX - this.offsetLeft,
                     y: downEvent.clientY - this.offsetTop
                 };
