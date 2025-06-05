@@ -29,7 +29,7 @@
 
 #waifu {
   bottom: 0px;
-  /* left: 0; */
+  pointer-events: none;
   right: 10px;
   line-height: 0;
   margin-bottom: -10px;
@@ -73,6 +73,7 @@
 }
 
 #live2d {
+  pointer-events: auto;
   cursor: grab;
   height: 300px;
   position: relative;
@@ -111,7 +112,8 @@
 }
 
 #waifu-tool svg:hover {
-  fill: #0684bd; /* #34495e */
+  fill: #0684bd;
+  /* #34495e */
 }
 
 @keyframes shake {
