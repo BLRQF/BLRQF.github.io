@@ -1,6 +1,6 @@
 // 定义全局配置（允许外部覆盖）
 const LIVE2D_CONFIG = window.LIVE2D_CONFIG || {
-  cdnPath: "https://cdn.jsdelivr.net/gh/dogyyds/live2d-widget-v3@main", // CDN路径（可根据实际情况修改）
+  cdnPath: "/live2D", // CDN路径（可根据实际情况修改）
   minWidth: 768, // 最小加载宽度（桌面端阈值）
   enableTools: [
     "hitokoto", "asteroids", "express", "photo", "quit"
@@ -19,8 +19,8 @@ function initLive2D() {
     // 2. 动态加载资源（支持错误捕获+清理）
     const { cdnPath } = LIVE2D_CONFIG;
     const resourceList = [
-      { url: '/live2D/waifu.css', type: "css", async: true },
-      { url: `${cdnPath}/Core/live2dcubismcore.js`, type: "js", async: false, defer: true }, // 核心库，按顺序加载
+      { url: `${cdnPath}/waifu.css`, type: "css", async: true },
+      { url: `${cdnPath}/live2dcubismcore.js`, type: "js", async: false, defer: true }, // 核心库，按顺序加载
       { url: `${cdnPath}/live2d-sdk.js`, type: "js", async: false, defer: true }, // SDK依赖core，用defer保证顺序
       { url: `${cdnPath}/waifu-tips.js`, type: "js", async: false, defer: true } // 提示脚本依赖SDK，按顺序加载
     ];
@@ -85,7 +85,7 @@ function initLive2D() {
         window.initWidget({
           homePath: "/",
           waifuPath: `${cdnPath}/waifu-tips.json`,
-          cdnPath: `${cdnPath}/Resources/`,
+          cdnPath: `${cdnPath}/`,
           tools: LIVE2D_CONFIG.enableTools,
           dragEnable: true,
           dragDirection: ["x", "y"],
