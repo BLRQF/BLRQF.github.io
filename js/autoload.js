@@ -3,7 +3,7 @@ const LIVE2D_CONFIG = window.LIVE2D_CONFIG || {
   cdnPath: "/live2D", // CDN路径（可根据实际情况修改）
   minWidth: 768, // 最小加载宽度（桌面端阈值）
   enableTools: [
-    "hitokoto", "asteroids", "express", "photo", "quit"
+    "hitokoto", "asteroids", "express", "switch-model", "photo", "quit"//// ,"switch-texture","info"
   ]
 };
 
