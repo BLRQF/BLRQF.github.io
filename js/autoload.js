@@ -1,6 +1,6 @@
 // 定义全局配置（允许外部覆盖）
 const LIVE2D_CONFIG = window.LIVE2D_CONFIG || {
-  cdnPath: "https://cdn.jsdelivr.net/gh/dogyyds/live2d-widget-v3@main",
+  cdnPath: "/live2D", // CDN路径（可根据实际情况修改）
   minWidth: 768, // 最小加载宽度（桌面端阈值）
   enableTools: [
     "hitokoto", "asteroids", "express", "photo", "quit"
@@ -8,6 +8,7 @@ const LIVE2D_CONFIG = window.LIVE2D_CONFIG || {
 };
 
 let live2dResources = []; // 记录动态添加的资源标签，用于清理
+let resizeHandler = null; // 记录resize事件句柄，用于清理
 
 function initLive2D() {
   try {
@@ -19,12 +20,12 @@ function initLive2D() {
     const { cdnPath } = LIVE2D_CONFIG;
     const resourceList = [
       { url: `${cdnPath}/waifu.css`, type: "css", async: true },
-      { url: `${cdnPath}/Core/live2dcubismcore.js`, type: "js", async: true },
-      { url: `${cdnPath}/live2d-sdk.js`, type: "js", async: true, defer: true }, // sdk依赖core，用defer按顺序执行
-      { url: `${cdnPath}/waifu-tips.js`, type: "js", async: true }
+      { url: `${cdnPath}/live2dcubismcore.js`, type: "js", async: false, defer: true }, // 核心库，按顺序加载
+      { url: `${cdnPath}/live2d-sdk.js`, type: "js", async: false, defer: true }, // SDK依赖core，用defer保证顺序
+      { url: `${cdnPath}/waifu-tips.js`, type: "js", async: false, defer: true } // 提示脚本依赖SDK，按顺序加载
     ];
 
-    // 加载单个资源（增强错误处理+记录标签）
+    // 加载单个资源（增强错误处理+记录标签+超时控制）
     function loadResource({ url, type, async, defer }) {
       return new Promise((resolve, reject) => {
         const element = type === "css"
@@ -37,7 +38,7 @@ function initLive2D() {
           element.href = url;
         } else {
           element.src = url;
-          element.async = async; // 异步加载JS
+          element.async = async; // 关闭异步（保证defer顺序）
           element.defer = defer; // 延迟执行（按顺序）
         }
         element.crossOrigin = "anonymous"; // 解决CDN跨域问题
@@ -45,63 +46,86 @@ function initLive2D() {
         // 记录标签用于清理
         live2dResources.push(element);
 
-        // 加载回调
-        element.onload = () => resolve({ url, status: "success" });
-        element.onerror = () => reject({ url, status: "error" });
+        // 加载回调（含超时控制）
+        const timeoutId = setTimeout(() => {
+          element.remove(); // 超时后移除标签
+          reject({ url, status: "timeout" });
+        }, 10000); // 10秒超时
+
+        element.onload = () => {
+          clearTimeout(timeoutId);
+          resolve({ url, status: "success" });
+        };
+        element.onerror = () => {
+          clearTimeout(timeoutId);
+          reject({ url, status: "error" });
+        };
 
         document.head.appendChild(element);
       });
     }
 
-    // 并行加载资源（允许部分失败）
-    Promise.allSettled(resourceList.map(loadResource))
-      .then(results => {
-        // 打印失败资源
-        const failed = results.filter(r => r.status === "rejected");
-        if (failed.length > 0) {
-          console.warn("[Live2D] 部分资源加载失败:", failed.map(r => r.reason.url));
-          showUserTip("Live2D组件部分功能异常，请刷新页面或联系管理员");
+    // 串行加载资源（保证严格顺序）
+    (async () => {
+      for (const resource of resourceList) {
+        try {
+          await loadResource(resource);
+        } catch (err) {
+          console.warn(`[Live2D] 资源 ${err.url} 加载失败: ${err.status}`);
+          showUserTipSafe("Live2D组件部分功能异常，请刷新页面或联系管理员");
+          // 关键资源失败时终止加载
+          if (resource.type === "js" && !resource.url.includes("waifu-tips")) {
+            throw new Error(`关键资源 ${resource.url} 加载失败`);
+          }
         }
+      }
 
-        // 所有资源加载完成后初始化
-        if (window.initWidget) {
-          initWidget({
-            homePath: "/",
-            waifuPath: `${cdnPath}/waifu-tips.json`,
-            cdnPath: `${cdnPath}/Resources/`,
-            tools: LIVE2D_CONFIG.enableTools,
-            dragEnable: true,
-            dragDirection: ["x", "y"],
-            switchType: "order"
-          });
-        } else {
-          throw new Error("initWidget未定义（可能SDK加载失败）");
-        }
-      })
+      // 所有资源加载完成后初始化
+      if (window.initWidget) {
+        window.initWidget({
+          homePath: "/",
+          waifuPath: `${cdnPath}/waifu-tips.json`,
+          cdnPath: `${cdnPath}/`,
+          tools: LIVE2D_CONFIG.enableTools,
+          dragEnable: true,
+          dragDirection: ["x", "y"],
+          switchType: "order"
+        });
+      } else {
+        throw new Error("initWidget未定义（可能SDK加载失败）");
+      }
+    })()
       .catch(err => {
         console.error("[Live2D] 初始化失败:", err);
-        showUserTip("Live2D组件加载失败，请刷新页面或联系管理员");
+        showUserTipSafe("Live2D组件加载失败，请刷新页面或联系管理员");
         cleanupLive2D(); // 加载失败时清理资源
       });
 
-    // 3. 监听窗口大小变化，动态卸载组件
-    window.addEventListener("resize", () => {
+    // 3. 监听窗口大小变化，动态卸载组件（增加事件清理）
+    resizeHandler = () => {
       const currentWidth = window.innerWidth;
-      if (currentWidth <= LIVE2D_CONFIG.minWidth && window.waifu) {
-        window.waifu.destroy(); // 假设组件提供destroy方法
+      if (currentWidth <= LIVE2D_CONFIG.minWidth && window.waifu?.destroy) {
+        window.waifu.destroy(); // 安全调用（检查destroy方法是否存在）
         cleanupLive2D(); // 清理资源标签
       }
-    });
+    };
+    window.addEventListener("resize", resizeHandler);
 
   } catch (err) {
     console.error("[Live2D] 运行时错误:", err);
-    showUserTip("Live2D组件发生异常，请刷新页面");
+    showUserTipSafe("Live2D组件发生异常，请刷新页面");
     cleanupLive2D();
   }
 }
 
-// 辅助函数：显示用户友好提示
-function showUserTip(msg) {
+// 安全显示用户提示（避免函数未定义）
+function showUserTipSafe(msg) {
+  if (typeof showUserTip === "function") {
+    showUserTip(msg);
+    return;
+  }
+  // 备用提示方案：控制台输出+简单DOM提示
+  console.warn(msg);
   const tipDiv = document.createElement("div");
   tipDiv.style.cssText = `
     position: fixed; 
@@ -116,17 +140,24 @@ function showUserTip(msg) {
   `;
   tipDiv.textContent = msg;
   document.body.appendChild(tipDiv);
-  setTimeout(() => tipDiv.remove(), 5000); // 5秒后自动消失
+  setTimeout(() => tipDiv.remove(), 5000);
 }
 
-// 辅助函数：清理动态添加的资源
+// 辅助函数：清理动态添加的资源及事件
 function cleanupLive2D() {
+  // 清理资源标签
   live2dResources.forEach(element => {
     if (element.parentNode) {
       element.parentNode.removeChild(element);
     }
   });
   live2dResources = [];
+
+  // 清理resize事件监听
+  if (resizeHandler) {
+    window.removeEventListener("resize", resizeHandler);
+    resizeHandler = null;
+  }
 }
 
 // 执行初始化（页面加载完成后）
