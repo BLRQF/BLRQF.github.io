@@ -89,6 +89,7 @@
   color: #aaa;
   opacity: 0;
   position: absolute;
+  pointer-events: auto;
   /* right: -10px; */
   margin-left: 260px;
   top: 70px;
