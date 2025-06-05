@@ -20,7 +20,7 @@ function initLive2D() {
     const { cdnPath } = LIVE2D_CONFIG;
     const resourceList = [
       { url: '/live2D/waifu.css', type: "css", async: true },
-      { url: `${cdnPath}/live2dcubismcore.js`, type: "js", async: false, defer: true }, // 核心库，按顺序加载
+      { url: `${cdnPath}/Core/live2dcubismcore.js`, type: "js", async: false, defer: true }, // 核心库，按顺序加载
       { url: `${cdnPath}/live2d-sdk.js`, type: "js", async: false, defer: true }, // SDK依赖core，用defer保证顺序
       { url: `${cdnPath}/waifu-tips.js`, type: "js", async: false, defer: true } // 提示脚本依赖SDK，按顺序加载
     ];
