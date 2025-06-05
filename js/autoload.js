@@ -85,7 +85,7 @@ function initLive2D() {
         window.initWidget({
           homePath: "/",
           waifuPath: `${cdnPath}/waifu-tips.json`,
-          cdnPath: '/live2D/',
+          cdnPath: `${cdnPath}/Resources/`,
           tools: LIVE2D_CONFIG.enableTools,
           dragEnable: true,
           dragDirection: ["x", "y"],
